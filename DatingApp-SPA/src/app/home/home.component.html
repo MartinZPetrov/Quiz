@@ -1,18 +1,112 @@
-<div class="container mt-5">
-  <div *ngIf="!registerMode" style="text-align: center">
+
+<div class="container mt-5 vertical-center">
+  <!-- <div *ngIf="!registerMode" style="text-align: center">
     <h1>Find your match</h1>
     <p class="lead">Come on in to view your matches... All you need to do is sign up!</p>
     <div class="text-center">
       <button class="btn btn-primary btn-lg mr-2" (click)="registerToggle()" >Register</button>
       <button class="btn btn-info btn-lg">Learn more</button>
     </div>
-  </div>
+  </div> -->
 
-  <div *ngIf="registerMode" class="container">
+  <!-- <div *ngIf="registerMode" class="container">
     <div class="row justify-content-center">
       <div class="col-4">
         <app-register [valuesFromHome]="values" (cancelRegister)="cancelRegisterMode($event)"></app-register>
       </div>
     </div>
+  </div> -->
+
+  <div *ngIf="!gameOver"  id="tabs">
+    <div class="topnav">
+      <div class="nav" (click)="changeMode()">
+        <i class="fa fa-list-alt"></i>
+      </div>
+      <div class="nav" (click)="changeMode()"><i class="fa fa-cog"></i></div>
+    </div>
+    <div *ngIf="toggleMode && settings.binaryMode">
+      <h3 id="who-header">Who Said it?</h3>
+      <div class="question">
+        <blockquote>
+            {{this?.questions[this.index]?.question}}
+        </blockquote>
+      </div>
+      <div class="answer" id="single">
+        <h5 id="author-style"> {{this?.questions[this.index]?.answer?.answer}}?</h5>
+        <div class="center">
+          <button *ngIf="!isVisibleNext" class="quiz-button" id="yes" (click)="yes()" name="Yes">Yes</button>
+          <button *ngIf="isVisibleNext" class="quiz-button" id=next (click)="next()" name="Next">Next</button>
+          <button  *ngIf="!isVisibleNext" class="quiz-button" id="no" (click)="no()" name="No">No</button>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="toggleMode && !settings.binaryMode" class="answer" id="multiple">
+      <h1>Who Said it?</h1>
+      <div class="question">
+        <blockquote>
+            {{this?.multipleQuestions[this.indexMultiple]?.question}}
+        </blockquote>
+      </div>
+      
+      <div id="buttons-multiple">
+        <button
+          class="multiple-answer"
+          type="submit"
+          (click)="firstAnswer()"
+          id="answer-1">
+          {{this?.multipleQuestions[indexMultiple]?.multipleAnswers?.firstAnswer}}
+        </button>
+
+        <button
+          class="multiple-answer"
+          type="submit"
+          (click)="secondAnswer()"
+          id="answer-2">
+          {{this?.multipleQuestions[indexMultiple]?.multipleAnswers?.secondAnswer}}
+        </button>
+      
+        <button
+          class="multiple-answer"
+          type="submit"
+          (click)="thirdAnswer()"
+          id="answer-3">
+            {{this?.multipleQuestions[indexMultiple]?.multipleAnswers?.thirdAnswer}}
+        </button>
+      </div>
+
+      <div class="center">
+        <button *ngIf="isVisibleNext" class="quiz-button" id=next (click)="next()" name="Next">Next</button>
+      </div>
+    </div>
+    
+    <div *ngIf="!toggleMode" id="second-tab">
+      <input
+        type="radio"
+        name="question-type"
+        id="single-answer"
+        (change)="settings.binaryMode = !settings.binaryMode"
+        [checked]="settings.binaryMode === true"
+        [value]="settings.binaryMode"
+      />
+      <label for="single-answer">Binary</label><br />
+      <input
+        type="radio"
+        name="question-type"
+        id="three-answers"
+        (change)="settings.binaryMode = !settings.binaryMode"
+        [checked]="settings.binaryMode === false"
+        [value]="!!settings.binaryMode"
+      />
+      <label for="three-answers">Multiple choice questions</label>
+    </div>
   </div>
+  
+  <div *ngIf="gameOver" class="container">
+    <div class="row justify-content-center">
+        <div class="col-4">
+          <app-game-over></app-game-over>
+        </div>
+      </div>
+    <div>
 </div>

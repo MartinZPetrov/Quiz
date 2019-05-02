@@ -1,0 +1,153 @@
+#tabs-1, #tabs-3 {
+    padding: 0.3em 0.7em;
+}
+
+#tabs {
+    padding: 0;
+    border: 3px solid #000;
+    background: #fff;
+    width: 30%;
+    margin: auto;
+}
+#second-tab {
+    text-align: center;    
+}
+
+div.question {
+    color: #ffffff;
+    background: #F012B1;
+    padding: 20px 10px 5px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+#tabs ul li{
+    padding: 0 !important;
+    border-bottom: 1px solid #ccc !important;
+    white-space:nowrap;
+}
+
+#tabs ul li a {
+    margin: 0 !important;
+    border-top: none;
+    border-left: 3px solid #000;
+    border-right: none;
+}
+
+#no {
+    background: #D62727;
+    color: #fff;
+    margin-left:20px;
+}
+
+#yes {
+    background: #25C559;
+    color: #fff;
+    margin-right:20px;
+}
+
+.nav {
+display: inline-block; 
+margin:10px;
+width: 40%;
+text-align: center;
+background: #000;
+cursor: pointer;
+}
+
+.topnav {
+    background: #000;
+}
+
+.navbutton{
+    color:white;
+}
+
+#tabs .topnav .nav i {
+    color:grey !important;
+}
+
+.multiple-answer {
+    color: #fff;
+    width: 200px;
+    line-height: 1;
+    text-align: left;
+    background: #A5A5A5;
+    -webkit-appearance: none;
+    border: 1px solid #DDD;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 1px 1px #fff;
+    -moz-box-shadow: 0 1px 1px #fff;
+    box-shadow: 0 1px 1px #fff;
+    text-shadow: 0 1px 1px #000;
+}
+
+#multiple-choice {
+    margin: 0 auto;
+    width: 80%;
+}
+#multiple-choice {
+    margin: 0 auto;
+    margin-bottom: 30px;
+    width: 80%;
+}
+
+#multiple-choice p {
+    margin: 3px 0 0;
+}
+
+#next{
+    background: #F012B1;
+    color: #fff;
+}
+
+.quiz-button {
+    display: inline-block;
+    width: 50px;
+    margin: 10px 0;
+    padding: 6px 10px;
+    white-space: nowrap;
+    vertical-align: middle;
+    line-height: normal;
+    font: bold 11px Sans-Serif;
+    color: #000;
+    -webkit-appearance: none;
+    border: 1px solid #DDD;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 1px 1px #fff;
+    -moz-box-shadow: 0 1px 1px #fff;
+    box-shadow: 0 1px 1px #fff;
+    text-shadow: 0 1px 1px #000;
+}
+
+.center{
+    text-align:center;
+}
+
+.center div {
+    display:inline-block;
+    margin-left:5px;
+    margin-right:5px;
+    color:#FFF;
+    background-color:darkgray;
+}
+
+#author-style{
+    text-align: center;
+    color:#000;
+}
+
+#who-header {
+    color:dimgray;
+}
+
+.vertical-center {
+    min-height: 75vh !important;
+    display: flex;
+    align-items: center;
+  }

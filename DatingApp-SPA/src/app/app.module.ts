@@ -7,13 +7,17 @@ import { NavComponent } from './nav/nav.component';
 import { AuthService } from './_services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
+import { ErrorInterceptorProvide } from './_services/error.interceptor';
+import { AlertifyService } from './_services/alertify.service';
+import { GameOverComponent } from './game-over/game-over.component';
 
 @NgModule({
    declarations: [
       AppComponent,
       NavComponent,
       HomeComponent,
-      RegisterComponent
+      RegisterComponent,
+      GameOverComponent
    ],
    imports: [
       BrowserModule,
@@ -21,7 +25,9 @@ import { RegisterComponent } from './register/register.component';
       FormsModule
    ],
    providers: [
-      AuthService
+      ErrorInterceptorProvide,
+      AuthService,
+      AlertifyService
    ],
    bootstrap: [
       AppComponent
