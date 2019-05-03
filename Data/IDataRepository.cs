@@ -1,13 +1,13 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using DatingApp.API.Models;
+using Quiz.API.Models;
 
-namespace DatingApp.API.Data
+namespace Quiz.API.Data
 {
     public interface IDataRepository
     {
          Task<List<Settings>> GetSettings();
-         Task<List<Questions>> GetQuestions ();
+         Task<List<Questions>> GetQuestions();
          Task<List<MultipleQuestions>> GetMultipleQuestions();
 
     }

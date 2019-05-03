@@ -1,7 +1,7 @@
-using DatingApp.API.Models;
+using Quiz.API.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace DatingApp.API.Data
+namespace Quiz.API.Data
 {
     public class DataContext : DbContext
     {
@@ -10,8 +10,6 @@ namespace DatingApp.API.Data
         public DbSet<Questions> Questions {get;set;}
         public DbSet<Settings> Settings {get;set;}
         public DbSet<MultipleAnswers> MultipleAnswers {get;set;}
-        public DbSet<MultipleQuestions> MultileQuestions {get;set;}
-        
-
+        public DbSet<MultipleQuestions> MultileQuestions {get;set;} 
     }
 }

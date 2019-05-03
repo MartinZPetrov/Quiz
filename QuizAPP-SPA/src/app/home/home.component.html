@@ -19,19 +19,19 @@
 
   <div *ngIf="!gameOver"  id="tabs">
     <div class="topnav">
-      <div class="nav" (click)="changeMode()">
-        <i class="fa fa-list-alt"></i>
+      <div class="nav " (click)="changeQuestionMode()">
+        <i class="fa fa-list-alt" id="main-page" ></i>
       </div>
-      <div class="nav" (click)="changeMode()"><i class="fa fa-cog"></i></div>
+      <div class="nav" (click)="changeSettingsMode()"><i id="second-page" class="fa fa-cog"></i></div>
     </div>
     <div *ngIf="toggleMode && settings.binaryMode">
-      <h3 id="who-header">Who Said it?</h3>
+      <h5 class="who-header">Who Said It?</h5>
       <div class="question">
         <blockquote>
-            {{this?.questions[this.index]?.question}}
+            "{{this?.questions[this.index]?.question}}"
         </blockquote>
       </div>
-      <div class="answer" id="single">
+      <div class="answer">
         <h5 id="author-style"> {{this?.questions[this.index]?.answer?.answer}}?</h5>
         <div class="center">
           <button *ngIf="!isVisibleNext" class="quiz-button" id="yes" (click)="yes()" name="Yes">Yes</button>
@@ -42,10 +42,10 @@
     </div>
 
     <div *ngIf="toggleMode && !settings.binaryMode" class="answer" id="multiple">
-      <h1>Who Said it?</h1>
+      <h5 class="who-header">Who Said It?</h5>
       <div class="question">
         <blockquote>
-            {{this?.multipleQuestions[this.indexMultiple]?.question}}
+            "{{this?.multipleQuestions[this.indexMultiple]?.question}}"
         </blockquote>
       </div>
       
@@ -55,7 +55,7 @@
           type="submit"
           (click)="firstAnswer()"
           id="answer-1">
-          {{this?.multipleQuestions[indexMultiple]?.multipleAnswers?.firstAnswer}}
+          -> {{this?.multipleQuestions[indexMultiple]?.multipleAnswers?.firstAnswer}}
         </button>
 
         <button
@@ -63,7 +63,7 @@
           type="submit"
           (click)="secondAnswer()"
           id="answer-2">
-          {{this?.multipleQuestions[indexMultiple]?.multipleAnswers?.secondAnswer}}
+          -> {{this?.multipleQuestions[indexMultiple]?.multipleAnswers?.secondAnswer}}
         </button>
       
         <button
@@ -71,7 +71,7 @@
           type="submit"
           (click)="thirdAnswer()"
           id="answer-3">
-            {{this?.multipleQuestions[indexMultiple]?.multipleAnswers?.thirdAnswer}}
+           -> {{this?.multipleQuestions[indexMultiple]?.multipleAnswers?.thirdAnswer}}
         </button>
       </div>
 
@@ -89,7 +89,7 @@
         [checked]="settings.binaryMode === true"
         [value]="settings.binaryMode"
       />
-      <label for="single-answer">Binary</label><br />
+      <label for="single-answer">Binary (Yes/No)</label><br />
       <input
         type="radio"
         name="question-type"

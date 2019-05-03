@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
     this.dataService.getSetting().subscribe(settings => {
       this.settings = settings[0];
     }, error => {
-      console.log(error);
+      this.alertify.еrror(error);
     });
   }
 
@@ -79,9 +79,13 @@ export class HomeComponent implements OnInit {
     this.registerMode = registerMode;
   }
 
-  changeMode() {
-    this.toggleMode = !this.toggleMode;
+  changeQuestionMode() {
+    this.toggleMode = true;
   }
+  changeSettingsMode() {
+    this.toggleMode = false;
+  }
+
   next() {
     this.isVisibleNext = false;
     this.index++;

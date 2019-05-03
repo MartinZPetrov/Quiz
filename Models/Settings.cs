@@ -1,4 +1,4 @@
-namespace DatingApp.API.Models
+namespace Quiz.API.Models
 {
     public class Settings
     {

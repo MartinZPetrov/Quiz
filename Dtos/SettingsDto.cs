@@ -1,4 +1,4 @@
-namespace DatingApp.API.Dtos
+namespace Quiz.API.Dtos
 {
     public class SettingsDto
     {

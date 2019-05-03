@@ -3,15 +3,15 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
-using DatingApp.API.Data;
-using DatingApp.API.Dtos;
-using DatingApp.API.Models;
+using Quiz.API.Data;
+using Quiz.API.Dtos;
+using Quiz.API.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
-namespace DatingApp.API.Controllers
+namespace Quiz.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

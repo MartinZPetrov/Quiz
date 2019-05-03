@@ -6,7 +6,7 @@
     padding: 0;
     border: 3px solid #000;
     background: #fff;
-    width: 30%;
+    width: 25%;
     margin: auto;
 }
 #second-tab {
@@ -20,6 +20,7 @@ div.question {
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
+    margin:10px;
 }
 
 #tabs ul li{
@@ -44,7 +45,7 @@ div.question {
 #yes {
     background: #25C559;
     color: #fff;
-    margin-right:20px;
+    margin-right:100px;
 }
 
 .nav {
@@ -52,12 +53,12 @@ display: inline-block;
 margin:10px;
 width: 40%;
 text-align: center;
-background: #000;
+background: #1d1b1b;
 cursor: pointer;
 }
 
 .topnav {
-    background: #000;
+    background: #1d1b1b;
 }
 
 .navbutton{
@@ -73,7 +74,7 @@ cursor: pointer;
     width: 200px;
     line-height: 1;
     text-align: left;
-    background: #A5A5A5;
+    background: #676161;
     -webkit-appearance: none;
     border: 1px solid #DDD;
     -moz-border-radius: 6px;
@@ -125,7 +126,8 @@ cursor: pointer;
     text-shadow: 0 1px 1px #000;
 }
 
-.center{
+.center {
+    margin-top:25px;
     text-align:center;
 }
 
@@ -139,15 +141,26 @@ cursor: pointer;
 
 #author-style{
     text-align: center;
-    color:#000;
+    color:rgb(92, 89, 89);
 }
 
-#who-header {
+.who-header {
     color:dimgray;
+    margin-left: 9px;
+    margin-top: 10px;
 }
 
 .vertical-center {
     min-height: 75vh !important;
     display: flex;
     align-items: center;
-  }
+}
+#main-page { 
+    font-size: 23px;
+}
+#second-page{
+    font-size: 23px;
+}
+#buttons-multiple{
+    text-align: center;
+}

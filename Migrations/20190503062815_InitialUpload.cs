@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace DatingApp.API.Migrations
+namespace Quiz.APP.Migrations
 {
     public partial class InitialUpload : Migration
     {
@@ -13,7 +13,7 @@ namespace DatingApp.API.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Answer = table.Column<string>(nullable: true),
-                    IsCorrect = table.Column<bool>(nullable: false)
+                    CorrectAnswer = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -31,11 +31,24 @@ namespace DatingApp.API.Migrations
                     ThirdAnswer = table.Column<string>(nullable: true),
                     FirstAnswerCorrect = table.Column<bool>(nullable: false),
                     SecondAnswerCorrect = table.Column<bool>(nullable: false),
-                    ThirAnswerCorrect = table.Column<bool>(nullable: false)
+                    ThirdAnswerCorrect = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_MultipleAnswers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Settings",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    BinaryMode = table.Column<bool>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Settings", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -50,19 +63,12 @@ namespace DatingApp.API.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Questions", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Settings",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    BinaryMode = table.Column<bool>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Settings", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Questions_Answers_AnswersId",
+                        column: x => x.AnswersId,
+                        principalTable: "Answers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -89,13 +95,15 @@ namespace DatingApp.API.Migrations
                 name: "IX_MultileQuestions_MultipleAnswersId",
                 table: "MultileQuestions",
                 column: "MultipleAnswersId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Questions_AnswersId",
+                table: "Questions",
+                column: "AnswersId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Answers");
-
             migrationBuilder.DropTable(
                 name: "MultileQuestions");
 
@@ -107,6 +115,9 @@ namespace DatingApp.API.Migrations
 
             migrationBuilder.DropTable(
                 name: "MultipleAnswers");
+
+            migrationBuilder.DropTable(
+                name: "Answers");
         }
     }
 }

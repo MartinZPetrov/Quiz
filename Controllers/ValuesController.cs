@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DatingApp.API.Data;
-using DatingApp.API.Dtos;
+using Quiz.API.Data;
+using Quiz.API.Dtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace DatingApp.API.Controllers
+namespace Quiz.API.Controllers
 {
     //http://localhost:5000/api
     //[Authorize]

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "DatingApp-SPA": {
+    "QuizAPP-SPA": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/DatingApp-SPA",
+            "outputPath": "dist/QuizAPP-SPA",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -54,18 +54,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "DatingApp-SPA:build"
+            "browserTarget": "QuizAPP-SPA:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "DatingApp-SPA:build:production"
+              "browserTarget": "QuizAPP-SPA:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "DatingApp-SPA:build"
+            "browserTarget": "QuizAPP-SPA:build"
           }
         },
         "test": {
@@ -99,7 +99,7 @@
         }
       }
     },
-    "DatingApp-SPA-e2e": {
+    "QuizAPP-SPA-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -107,11 +107,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "DatingApp-SPA:serve"
+            "devServerTarget": "QuizAPP-SPA:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "DatingApp-SPA:serve:production"
+              "devServerTarget": "QuizAPP-SPA:serve:production"
             }
           }
         },
@@ -127,5 +127,5 @@
       }
     }
   },
-  "defaultProject": "DatingApp-SPA"
+  "defaultProject": "QuizAPP-SPA"
 }
