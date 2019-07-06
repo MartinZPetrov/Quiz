@@ -1,5 +1,7 @@
 # Quiz
 
+More information in the QuizApp.pdf in the repository: 
+
 General information: In the famous quote quiz game system will ask questions and user should try to pick a correct answer. Depending on selected mode user will have to choose correct answer from a list of answers, or simply to answer with Yes/No to the question. Task: Please create 2 pages: 1) Main page - shows a famous quote quiz 
 2) Settings page – allows switching between modes. 
 The user has to guess who the author of the quote is. The application can function in 2 modes: a) Binary (Yes/No) – this is the default mode 
